@@ -1,0 +1,126 @@
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% START PACKAGES
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\usepackage[bottom=20mm, top=4.5cm]{geometry}
+\usepackage[dutch]{babel} % language
+\usepackage{graphicx} % graphics
+\usepackage{fancyhdr} % headers and footers
+\usepackage[table]{xcolor} % custom colors
+\usepackage{tabulary}
+\usepackage{tikz} % positioning
+\usepackage{textpos} % text positions
+\usepackage{lastpage} % get last page number
+\usepackage{titlesec} % 
+\usepackage{float} % 
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{pdfpages} % include pdf
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{tocloft}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{chngpage}
+\usepackage[utf8]{inputenc}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% END PACKAGES
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% START COMMANDS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% title spacing
+\titlespacing*{\chapter}{0pt}{0pt}{25pt}
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{10pt}{-20pt}
+\titlespacing*{\section}{0pt}{7pt}{5pt}
+
+% No indents new paragraphs
+\setlength{\parindent}{0cm}
+
+% Define table colors
+\rowcolors{1}{white}{light-gray}
+
+\hypersetup{ % Configure hyperlink looks
+    colorlinks=true,
+    linkcolor=black,
+    linktoc=all,
+    linkbordercolor=blue
+}
+%rotation of table columns with \rot
+\newcommand*\rot{\rotatebox{90}}
+\newcommand*\OK{\ding{51}}
+
+
+% define version number
+\newcommand{\versie}[1]{\gdef\printversie{#1}}
+
+% print version number
+\newcommand{\printversie}{1.0} 
+
+% path to image location
+\graphicspath{ {Images/} }
+
+% custom color definitions
+\definecolor{light-gray}{gray}{0.85}
+\definecolor{footer-gray}{gray}{0.3}
+\definecolor{dosiblue}{HTML}{b4c8de}
+\definecolor{babyblue}{HTML}{edf5ff}
+
+% top of page spacing
+\setlength{\voffset}{-1.0in}
+
+\titleformat{\chapter}{\normalfont\huge\bfseries}{\thechapter.}{20pt}{\huge}
+
+%\titleformat{\chapter}[display]
+%    {\normalfont\huge\bfseries}{\thechapter}{20pt}{\Huge}
+%\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+
+\renewcommand{\headrulewidth}{0.0pt}
+\fancyhfoffset[L]{2.5cm}
+\headwidth=\paperwidth
+
+
+\fancypagestyle{plain}{
+  \fancyhead[L]{
+    \begin{tikzpicture}
+      \node{\includegraphics[width=50pt,height=50pt]{logo}};
+      \node[xshift=3cm]{Be A Gamer Productions};
+    \end{tikzpicture}}
+  \fancyhead[R]{
+    \begin{tikzpicture}[overlay]
+      \node[yshift=1cm]{Game Design Document}; % Document Name
+    \end{tikzpicture}}
+\fancyfoot[l]{
+\vfill
+  \begin{tikzpicture}[overlay]
+    \node[xshift=1.8cm]{\textcolor{footer-gray}{\today}};
+  \end{tikzpicture}}
+  \fancyfoot[c]{
+\vfill
+  \begin{tikzpicture}[overlay]
+    \node[xshift=1.25cm]{\textcolor{footer-gray}{Versie \printversie}};
+  \end{tikzpicture}}
+\fancyfoot[r]{
+\vfill
+  \begin{tikzpicture}[overlay]
+    \node[xshift=1.25cm]{\textcolor{footer-gray}{\thepage/\pageref{LastPage}} };
+  \end{tikzpicture}}
+}
+\pagestyle{plain}
+
+%\newcommand{starttabbuh}{
+%    		\begin{table}[h]
+%			\centering
+%			\renewcommand{\arraystretch}{1.5}
+%			\rowcolors{1}{white}{light-gray}
+%			\begin{tabulary}{\textwidth}{lL}
+%			}
+%
+%\newcommand{endtabbuh}{\end{tabulary}\renewcommand{\arraystretch}{1}\end{table}}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% END COMMANDS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

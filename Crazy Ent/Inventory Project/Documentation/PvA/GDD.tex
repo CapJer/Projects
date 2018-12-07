@@ -1,0 +1,532 @@
+\documentclass[a4paper]{report}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% START PACKAGES
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\usepackage{packages}
+\usepackage{Templates/stroetengaTitle} % custom title
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+  
+\usepackage{lipsum} 
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% END PACKAGES
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% START COMMANDS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\setlength{\extrarowheight}{4pt}
+\renewcommand{\familydefault}{\sfdefault}
+
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+
+\newcounter{oldtocdepth}
+
+\newcommand{\hidefromtoc}{%
+  \setcounter{oldtocdepth}{\value{tocdepth}}%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{-10}}%
+}
+
+\newcommand{\unhidefromtoc}{%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{\value{oldtocdepth}}}%
+  
+  \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% END COMMANDS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% START DEFINITIONS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\versie{2018-2019}
+\author{Be A Gamer Productions}
+\company{}
+\doctype{Game Design Document}
+\title{Unnamed Project}
+\supervisor{\printversie}
+\internship{\today}
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% END DEFINITIONS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% START DOCUMENT
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+\maketitle % uses our custom package to generate our title page with the above values
+\newpage
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%  TABLE OF CONTENTS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\setlength{\cftchapnumwidth}{1.5em}
+\setlength{\cftsecnumwidth}{3em}
+
+\hidefromtoc
+\chapter *{Content}
+\unhidefromtoc
+
+\renewcommand\contentsname{}
+\tableofcontents
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%  AKKOORD EN VERSIE
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\hidefromtoc
+\chapter *{Aggreement and Version}
+\unhidefromtoc
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Version}  	& 	\textbf{Date} 	& 	\textbf{Edit} 			\\ \hline
+1.0  			& 	26-11-2018 		& 	Document creation.				\\ \hline
+1.1  			& 	2-12-2018 		& 	Filling the document.			\\ \hline
+  			& 		 		& 							\\ \hline
+\end{tabular}}
+\renewcommand{\arraystretch}{1}
+\label{my-label}
+\end{table}
+
+\begin{table}[h]
+\centering
+\setlength{\extrarowheight}{7pt}
+\arrayrulecolor{black}
+\resizebox{\textwidth}{!}{\begin{tabular}{!{\color{black}\vrule}l!{\color{black}\vrule}l!{\color{black}\vrule}l!{\color{black}\vrule}l!{\color{black}\vrule}} 
+\hline
+\multicolumn{4}{!{\color{black}\vrule}l!{\color{black}\vrule}}{ \textbf{Author}\textit{} }             						\\ 
+																				\hline
+\textbf{Name}      	& 	\textbf{Function}   	& 	\multicolumn{2}{l!{\color{black}\vrule}}{\textbf{Department}}			\\ 
+																				\hline
+J. Sas	 		& 	Software Engineer	& 	\multicolumn{2}{l!{\color{black}\vrule}}{Be A Gamer Productions}			\\ 
+         			&  		 		&   	\multicolumn{2}{l!{\color{black}\vrule}}{}                            				\\ \hline
+																				\hline
+\multicolumn{4}{!{\color{black}\vrule}l!{\color{black}\vrule}}{\textbf{Beoordeling \& Goedkeuring}}    					\\ 
+																				\hline
+\textbf{Name}      	& 	\textbf{Function}   		& 	\multicolumn{2}{l!{\color{black}\vrule}}{\textbf{Company}}                       \\ \hline
+J. Sas	     		& 	Software Engineer		& 	\multicolumn{2}{l!{\color{black}\vrule}}{Be A Gamer Productions}      	\\
+M. Heerkens 		& 	Software Engineer      	& 	\multicolumn{2}{l!{\color{black}\vrule}}{Be A Gamer Productions} 		\\
+         			&   					&   	\multicolumn{2}{l!{\color{black}\vrule}}{}                            			\\ \hline
+\end{tabular}}
+\renewcommand{\arraystretch}{1}
+\arrayrulecolor{black}
+\end{table}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%  OVERVIEW
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\hidefromtoc
+\chapter *{Overview}
+\unhidefromtoc
+
+\addcontentsline{toc}{chapter}{Overview}
+
+\kern 3.0em
+
+%FOTO VAN HET LOGO HIER
+%\begin{center}
+%    \includegraphics[width=0.3\textwidth]{logo}
+%\end{center}
+%
+%\kern 1.0em
+
+\hidefromtoc
+\section *{Game Description}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Theme / Setting / Genre}
+
+\hidefromtoc
+\subsection *{Theme}\ \\
+\unhidefromtoc
+
+The game is set in an post apocalyptic world that is starving of resources while the goverment left all of the 'low life' citizens to die on a dying planet.
+
+\kern 1.0em
+
+\hidefromtoc
+\subsection *{Setting}\ \\
+\unhidefromtoc
+
+The game will feature some parts of realism/semi-realism and some parts of fantasy.
+
+\kern 1.0em
+
+\hidefromtoc
+\subsection *{Genre}\ \\
+\unhidefromtoc
+
+The game is an Action-Adventure RPG game with a massive open world.
+
+\kern 2.0em
+
+\hidefromtoc
+\section *{Core Gameplay}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Core Gameplay}
+
+To the core this game will be a story based co-op experience where the player gets to experience how it would be to build civilisations in a post apocalyptic / dying world and they can choose to help each other and rebuild the world or to fight each other for resources.
+
+\kern 1.0em
+
+List of important game aspects:
+\begin{itemize}
+	\item PvP: \ \\
+	Player versus player will be a very important aspect of the multiplayer experience, because of this the shooting/fighting mechanics should be up to standard with other games, in a way that the players will not have any issues while fighting enemies or other players.
+
+	\item Base Building: \ \\
+	Players must be able to have a system with which they can freely build anything to their desire.
+	
+	\item AI: \ \\
+	The AI in game will have to be intelligent enough to fight groups of players at the same type and also have to be able to fight other AI when necassery.
+
+	\item Rendering: \ \\
+	Rendering should be smooth and look good, it should be able to do 60 fps on medium settings on console to be acceptable.
+
+	\item Logical controls: \ \\
+	Controls should be the same as the standard that is set by modern age games.
+
+	\item Anti Cheat / Grief: \ \\
+	Players should be able to report other players in game for cheating and griefing, this system must be functional and tested before launching the game.
+\end{itemize}
+
+\clearpage \ \\ \\
+
+\hidefromtoc
+\section *{Platforms}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Platforms}
+
+\begin{itemize}
+	\item Computer
+	\begin{itemize}
+		\item Windows OS
+		\item MAC OS
+		\item Linux OS
+	\end{itemize}
+	\item Playstation 4
+	\item Xbox One
+\end{itemize}
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Hardware \& Software}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Hardware \& Software}
+
+Hardware used for development:
+\begin{itemize}
+	\item CPU		: I7 8700k OC 5Ghz
+	\item GPU		: GTX 1070Ti
+	\item RAM		: 32Gb G-Skill Trident z 2400Mhz
+\end{itemize}
+
+\kern 1.0em
+
+Software used for development:
+\begin{itemize}
+	\item OS		: Windows 10
+	\item DirectX		: Version 11 \& Version 12
+	\item Engine		: Unity 2018.2/3
+	\item 3D Modeling 	: Blender
+	\item Texturing	: Photoshop
+\end{itemize}
+
+\kern 1.0em
+
+Hardware used for testing:
+\begin{itemize}
+	\item CPU		: I7 8700k OC 5Ghz
+	\item GPU		: GTX 1070Ti
+	\item RAM		: 32Gb G-Skill Trident z 2400Mhz
+	\item Storage	: 1Tb Samsung 970 evo
+	\item Network	: Broadband internet connection
+\end{itemize}
+
+\clearpage \ \\ \\
+
+\hidefromtoc
+\section *{Influences}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Influences}
+
+\begin{itemize}
+	\item Fallout 76
+	\item No Man's Sky
+	\item State of Decay
+	\item Dying Light
+	\item Subnautica
+	\item The Forest
+	\item Ark: Survival Evolved
+	\item Rust
+\end{itemize}
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Scope}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Scope}
+
+An important thing in game is that there should be online grouping functionalities, 
+PvP and PvE focussed playing styles are also a big part of the game and must be included in the end product.
+Story and quests should be open and available to multiple people at the same time, this might be though to implement without making some compremises.
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Result}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Result}
+
+If all goes to plan this game should have a big, open and filled map with lots of things to do, many things to find and a story to be followed. 
+Players should be able to make 'clans' or 'factions' and fight with others for resources, locations or just for fun. 
+If players are confronted by cheaters, they should be able to report them, ignore them and play the game without being influenced by them.
+There should be a system in place for players to build shelters and/or bases protect themselves and their resources from others.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%  STORY & GAMEPLAY
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\hidefromtoc
+\chapter *{Story \& Gameplay}
+\unhidefromtoc
+
+\addcontentsline{toc}{chapter}{Story \& Gameplay}
+
+\kern 3.0em
+
+\hidefromtoc
+\section *{Story}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Story}
+
+Full story of the game
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Gameplay}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Gameplay}
+
+All the gameplay elements of the game
+
+\clearpage \ \\ \\
+
+\hidefromtoc
+\section *{Controls}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Controls}
+
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{pc}
+\end{center}
+
+\kern 1.0em
+
+\hidefromtoc
+\subsection *{PC}\ \\
+\unhidefromtoc
+
+\begin{itemize}
+	\item WASD		: Movement
+	\item Mouse		: Camera Movement
+	\item L. Shift		: Toggle run
+	\item Spacebar	: Jump
+	\item Escape		: Menu
+	\item Tab 		: Inventory
+	\item Left Mouse	: Shoot/Punch
+	\item Right Mouse	: Aim
+	\item Scroll Wheel	: Scroll through weapons
+	\item E 		: Interact / Pick Up
+	\item Q 		: Drop item (In hand or hovering in menu)
+	\item M 		: Open the map
+	\item T 		: Open text chat
+\end{itemize}
+
+\clearpage \ \\ \\
+
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{ps4}
+\end{center}
+
+\kern 1.0em
+
+\hidefromtoc
+\subsection *{Playstation 4}\ \\
+\unhidefromtoc
+
+\begin{itemize}
+	\item Left Stick 	: Movement
+	\item Right Stick	: Camera Movement
+	\item L3		: Toggle run
+	\item Cross		: Jump
+	\item Options	: Menu
+	\item Triangle 	: Inventory
+	\item R2 		: Shoot/Punch
+	\item L2 		: Aim
+	\item L1 / R1		: Scroll through weapons
+	\item Square 	: Interact / Pick Up
+	\item Circle 		: Drop item (In hand or hovering in menu)
+	\item Touchpad 	: Open the map
+	\item In menu 	: Open text chat
+\end{itemize}
+
+\clearpage \ \\ \\
+
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{xbox}
+\end{center}
+
+\kern 1.0em
+
+\hidefromtoc
+\subsection *{Xbox One}\ \\
+\unhidefromtoc
+
+\begin{itemize}
+	\item Left Stick 	: Movement
+	\item Right Stick	: Camera Movement
+	\item L. Click		: Toggle run
+	\item A		: Jump
+	\item Menu		: Menu
+	\item Y 		: Inventory
+	\item R. Bumper	: Shoot/Punch
+	\item L. Bumper	: Aim
+	\item L1 / R1 	: Scroll through weapons
+	\item X 		: Interact / Pick Up
+	\item B 		: Drop item (In hand or hovering in menu)
+	\item View 		: Open the map
+	\item In menu 	: Open text chat
+\end{itemize}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%  ASSETS
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\hidefromtoc
+\chapter *{Assets}
+\unhidefromtoc
+
+\addcontentsline{toc}{chapter}{Assets}
+
+\kern 3.0em
+
+\hidefromtoc
+\section *{2D Textures}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{2D Textures}
+
+\begin{itemize}
+	\item List
+	\item of
+	\item Assets
+\end{itemize}
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{3D Models}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{3D Models}
+
+\begin{itemize}
+	\item List
+	\item of
+	\item Assets
+\end{itemize}
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Sounds}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Sounds}
+
+\begin{itemize}
+	\item List
+	\item of
+	\item Assets
+\end{itemize}
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Music}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Music}
+
+\begin{itemize}
+	\item List
+	\item of
+	\item Assets
+\end{itemize}
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Code}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Code}
+
+\begin{itemize}
+	\item List
+	\item of
+	\item Assets
+\end{itemize}
+
+\kern 1.0em
+
+\hidefromtoc
+\section *{Animation}
+\unhidefromtoc
+
+\addcontentsline{toc}{section}{Animation}
+
+\begin{itemize}
+	\item List
+	\item of
+	\item Assets
+\end{itemize}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%  SCHEDULE
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\hidefromtoc
+\chapter *{Schedule}
+\unhidefromtoc
+
+\addcontentsline{toc}{chapter}{Schedule}
+
+\kern 3.0em
+
+%\begin{center}
+%    \includegraphics[width=0.3\textwidth]{logo}
+%\end{center}
+( Add image of planned schedule here )
+
+\kern 1.0em
+
+Planned deadline for this project is the summer of 2020.
+
+\end{document}
